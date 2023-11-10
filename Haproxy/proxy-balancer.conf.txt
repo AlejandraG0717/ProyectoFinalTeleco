@@ -1,0 +1,7 @@
+<Proxy balancer://mycluster>
+    BalancerMember http://10.0.0.1:80
+    BalancerMember http://10.0.0.2:80
+</Proxy>
+
+ProxyPass /test balancer://mycluster
+ProxyPassReverse /test balancer://mycluster
